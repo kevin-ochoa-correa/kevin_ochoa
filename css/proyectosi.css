@@ -26,7 +26,7 @@
   background: 
     linear-gradient(to bottom, #06080c 0%, transparent 12%), /* Integración superior */
     linear-gradient(to bottom, rgba(6, 8, 12, 0.5), rgba(6, 8, 12, 0.98) 95%),
-    url('/img/desig5.png') no-repeat center center;
+    url('../img/desig5.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   color: var(--ap-hd-white);

@@ -17,7 +17,7 @@
     /* 🖥️ TU MAGNÍFICO FONDO FIJO SENIOR DE BASE */
     background:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(15, 18, 25, 0.75)),
-        url('/img/sobre.png') no-repeat center center;
+        url('../img/sobre.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }

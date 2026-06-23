@@ -27,7 +27,7 @@
 .hk-fusion-art-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/img/kevin\ 6.png');
+    background-image: url('../img/kevin\ 6.png');
     /* Tu imagen */
     background-size: cover;
     background-position: center 25%;

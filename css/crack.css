@@ -16,7 +16,7 @@
     /* 🖥️ TU FÓRMULA DE FONDO FIJO INTEGRADA */
     background:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(15, 18, 25, 0.85)),
-        url('/img/yo.png') no-repeat center center;
+        url('../img/yo.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     /* Mantiene tu foto fija al hacer scroll en PC */
