@@ -1,0 +1,223 @@
+/* ============================================================
+   ESTILOS DE FUSIÓN: EDITORIAL SERIF + MISTICISMO OSCURO
+   ============================================================ */
+
+.hk-fusion-section {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    /* Altura imponente basada en la nueva imagen */
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centrado absoluto */
+    background-color: #020406;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Encapsulado seguro para no alterar el resto de tu web */
+.hk-fusion-section * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Arte de fondo */
+.hk-fusion-art-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/img/kevin\ 6.png');
+    /* Tu imagen */
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Resplandor místico central (como el sol sutil de la imagen de nubes) */
+.hk-fusion-energy-core {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 65%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    filter: blur(50px);
+    pointer-events: none;
+}
+
+/* Viñeta cinematográfica completa para fundir los bordes y centrar la atención */
+.hk-fusion-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(2, 4, 6, 0.2) 0%, rgba(2, 4, 6, 0.6) 60%, rgba(2, 4, 6, 0.95) 100%);
+    background-image: linear-gradient(180deg, rgba(2, 4, 6, 0.4) 0%, rgba(2, 4, 6, 0.2) 50%, rgba(2, 4, 6, 0.9) 100%);
+    z-index: 3;
+}
+
+/* Contenedor centralizado */
+.hk-fusion-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+}
+
+.hk-fusion-content {
+    max-width: 850px;
+    /* Ancho ideal para lectura de títulos largos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Alineación central impecable */
+    text-align: center;
+}
+
+/* Badge de autoría superior */
+.hk-fusion-badge-backed {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.hk-fusion-badge-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.hk-fusion-badge-author {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tipografía Serif de Alta Gama (Estilo vly.ai) */
+.hk-fusion-title {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hk-fusion-italic {
+    font-style: italic;
+    font-weight: 300;
+    background: linear-gradient(180deg, #ffffff 40%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Descripción inferior purificada */
+.hk-fusion-caption {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 580px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+/* Botones con geometría limpia de la referencia */
+.hk-fusion-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Botón Sólido Blanco */
+.hk-fusion-btn-solid {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: inline-block;
+    background: #ffffff;
+    color: #020406;
+    padding: 1.1rem 2.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.hk-fusion-btn-solid:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+/* Botón de Cristal Oscuro Premium */
+.hk-fusion-btn-glass {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.1rem 2.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.hk-fusion-btn-glass:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Ajustes responsivos para celulares */
+@media (max-width: 768px) {
+    .hk-fusion-section {
+        height: auto;
+        padding: 7rem 0;
+    }
+
+    .hk-fusion-container {
+        padding: 0 1.5rem;
+    }
+
+    .hk-fusion-title {
+        font-size: 2.6rem;
+        line-height: 1.2;
+    }
+
+    .hk-fusion-caption {
+        font-size: 0.95rem;
+    }
+
+    .hk-fusion-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hk-fusion-btn-solid,
+    .hk-fusion-btn-glass {
+        width: 100%;
+        text-align: center;
+    }
+}

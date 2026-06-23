@@ -1,170 +1,296 @@
-/* 1. CONTENEDOR PRINCIPAL: Controla los márgenes para que no toquen el borde */
+    /* ============================================================
+   DISEÑO EDITORIAL PREMIUM — FULL SPLIT LAYOUT (ALTO IMPACTO)
+   ============================================================ */
 
-.ap-portfolio {
-    background-color: #000;
-    /* Fondo Negro Puro */
-    padding: 100px 0;
+:root {
+  --ap-hd-bg: #06080c;
+  --ap-hd-white: #ffffff; /* Blanco Puro */
+  --ap-hd-muted: rgba(255, 255, 255, 0.4);
+  --ap-hd-border: rgba(255, 255, 255, 0.08);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.ap-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+/* Reset local estricto */
+.ap-hd-portfolio,
+.ap-hd-portfolio * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-/* 2. LA GRILLA BENTO: Aquí se define el tamaño base */
-
-.ap-bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 4 columnas fijas */
-    grid-auto-rows: 300px;
-    /* Altura base de cada cuadro */
-    gap: 24px;
-    width: 100%;
+/* Contenedor Principal conectado a tu imagen de fondo genial */
+.ap-hd-portfolio {
+  position: relative;
+  width: 100%;
+  background: 
+    linear-gradient(to bottom, #06080c 0%, transparent 12%), /* Integración superior */
+    linear-gradient(to bottom, rgba(6, 8, 12, 0.5), rgba(6, 8, 12, 0.98) 95%),
+    url('/img/desig5.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--ap-hd-white);
+  font-family: var(--font-sans);
+  padding: 10rem 4rem;
+  overflow: hidden;
 }
 
-
-/* 3. LAS TARJETAS (ESTILO APPLE) */
-
-.ap-item {
-    position: relative;
-    border-radius: 32px;
-    overflow: hidden;
-    background: #111;
-    text-decoration: none;
-    cursor: pointer;
-    /* Borde sutil para que se vea en fondo negro */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    will-change: transform;
-    /* Optimización de rendimiento */
+/* RETÍCULA LÍNEAS GUÍA DE DISEÑADOR */
+.ap-hd-grid-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  pointer-events: none;
+  z-index: 1;
+  padding: 0 6rem;
+}
+.ap-hd-grid-line {
+  border-left: 1px dashed rgba(255, 255, 255, 0.02);
+  height: 100%;
 }
 
-.ap-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s ease;
+.ap-hd-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; /* Gran separación para dejar respirar cada proyecto */
 }
 
-
-/* --- CONTROL DE TAMAÑOS ESPECÍFICOS --- */
-
-
-/* Usa estas clases en tu HTML para que unos pesen más que otros */
-
-.ap-item.big {
-    grid-column: span 2;
-    grid-row: span 2;
-    /* El más grande: 5temporada */
+/* --- CABECERA EDITORIAL --- */
+.ap-hd-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-left: 3px solid var(--ap-hd-white);
+  padding-left: 2rem;
 }
 
-.ap-item.wide {
-    grid-column: span 2;
-    /* Ancho: Spider-man */
+.ap-hd-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--ap-hd-muted);
 }
 
-.ap-item.tall {
-    grid-row: span 2;
-    /* Alto: Zapatería o similar */
+.ap-hd-main-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-
-/* --- INTERACCIONES (HOVER) --- */
-
-.ap-item:hover .ap-bg-img {
-    transform: scale(1.05);
-    filter: blur(8px) brightness(0.5);
+/* --- BLOQUES DE PROYECTO (SPLIT LAYOUT) --- */
+.ap-hd-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem; /* Espaciado premium de galería de arte */
 }
 
-.ap-overlay {
-    position: absolute;
-    inset: 0;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
-    transition: background 0.5s ease;
+.ap-hd-project-card {
+  display: grid;
+  grid-template-columns: 45fr 55fr; /* 45% texto, 55% imagen gigante */
+  gap: 5rem;
+  align-items: center;
 }
 
-.ap-details {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+/* Alternancia asimétrica automática (Uno a la izquierda, otro a la derecha) */
+.ap-hd-project-card.ap-hd-inverse {
+  grid-template-columns: 55fr 45fr;
+}
+.ap-hd-project-card.ap-hd-inverse .ap-hd-col-info {
+  grid-column: 2;
+}
+.ap-hd-project-card.ap-hd-inverse .ap-hd-col-visual {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.ap-item:hover .ap-details {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 15px;
+/* --- COLUMNA DE INFORMACIÓN --- */
+.ap-hd-col-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-
-/* --- SPECS INTERNAS --- */
-
-.ap-specs {
-    display: flex;
-    gap: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
-    margin-bottom: 15px;
+.ap-hd-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.spec-item span {
-    font-size: 10px;
-    color: #86868b;
-    text-transform: uppercase;
+.ap-hd-number {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ap-hd-muted);
 }
 
-.spec-item p {
-    font-size: 13px;
-    color: #fff;
-    margin: 0;
+.ap-hd-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ap-hd-white);
+  border: 1px solid var(--ap-hd-border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.ap-btn-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 12px;
+.ap-hd-project-name {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-
-/* --- RESPONSIVE CORREGIDO --- */
-
-@media (max-width: 1024px) {
-    .ap-bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.ap-hd-concept {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85); /* Blanco limpio de lectura */
+  text-align: justify;
 }
 
-@media (max-width: 768px) {
-    .ap-container {
-        padding: 0 20px;
-    }
-    .ap-bento-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 350px;
-        /* Altura cómoda en celular */
-    }
-    .ap-item.big,
-    .ap-item.wide,
-    .ap-item.tall {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    /* Mostrar info en móvil por defecto */
-    .ap-details {
-        opacity: 1;
-        max-height: 200px;
-    }
-    .ap-bg-img {
-        filter: brightness(0.6);
-    }
+/* Ficha Técnica tipo tabla minimalista */
+.ap-hd-specs-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--ap-hd-border);
+  border-bottom: 1px solid var(--ap-hd-border);
+  padding: 1.5rem 0;
+}
+
+.ap-hd-spec-item {
+  display: grid;
+  grid-template-columns: 30fr 70fr;
+  align-items: baseline;
+}
+
+.spec-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--ap-hd-muted);
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ap-hd-white);
+}
+
+/* Enlace tipo botón interactivo minimalista */
+.ap-hd-btn-action {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ap-hd-white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  border-bottom: 2px solid var(--ap-hd-white);
+  padding-bottom: 5px;
+  letter-spacing: 0.05em;
+  transition: gap 0.3s ease, border-color 0.3s ease;
+}
+
+.ap-hd-btn-action:hover {
+  gap: 1.2rem;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- COLUMNA VISUAL (IMAGEN GIGANTE) --- */
+.ap-hd-col-visual {
+  width: 100%;
+}
+
+.ap-hd-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Formato panorámico de cine */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--ap-hd-border);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  background: #0e121a;
+}
+
+.ap-hd-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Capa de atmósfera para fundir la imagen con el entorno */
+.ap-hd-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 8, 12, 0.4), transparent);
+  pointer-events: none;
+  transition: background-color 0.4s ease;
+}
+
+/* Interacciones de movimiento premium */
+.ap-hd-project-card:hover .ap-hd-img {
+  transform: scale(1.04);
+}
+.ap-hd-project-card:hover .ap-hd-image-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT (DE GALERÍA PC A COMPACTO MÓVIL)
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .ap-hd-portfolio { padding: 8rem 2rem; }
+  .ap-hd-project-card, .ap-hd-project-card.ap-hd-inverse {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 960px) {
+  /* En tablets colapsa a flujo vertical natural */
+  .ap-hd-project-card, .ap-hd-project-card.ap-hd-inverse {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .ap-hd-project-card.ap-hd-inverse .ap-hd-col-info {
+    grid-column: 1;
+  }
+  .ap-hd-project-card.ap-hd-inverse .ap-hd-col-visual {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .ap-hd-projects-list {
+    gap: 7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ap-hd-portfolio { padding: 6rem 1.25rem; }
+  .ap-hd-grid-overlay { display: none; } /* Oculta líneas guía */
+  
+  .ap-hd-header {
+    padding-left: 1rem;
+  }
+  
+  .ap-hd-image-frame {
+    aspect-ratio: 4 / 3; /* Más cuadrado en celulares para mejor visibilidad */
+  }
+
+  .ap-hd-spec-item {
+    grid-template-columns: 1fr; /* Apila etiquetas técnicas en móvil */
+    gap: 0.25rem;
+  }
 }

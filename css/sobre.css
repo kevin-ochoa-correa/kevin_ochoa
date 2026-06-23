@@ -1,0 +1,398 @@
+ /* ============================================================
+   ESTILO BRUTALISTA CINEMÁTICO — EXPERT GRAPHIC DESIGNER
+   ============================================================ */
+
+ :root {
+     --ko-bg: #06080c;
+     --ko-white: #ffffff;
+     /* Blanco Puro */
+     --ko-muted: rgba(255, 255, 255, 0.4);
+     /* Gris técnico */
+     --ko-border: rgba(255, 255, 255, 0.08);
+     --font-display: "Playfair Display", Georgia, serif;
+     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+ }
+
+ /* Reset local estricto */
+ .ko-brutal-about,
+ .ko-brutal-about * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ /* Contenedor Sección */
+ .ko-brutal-about {
+     position: relative;
+     width: 100%;
+     min-height: 110vh;
+     background:
+         linear-gradient(to bottom, rgba(6, 8, 12, 0.5), rgba(6, 8, 12, 0.98)),
+         url('/img/Sobre.png') no-repeat center center;
+     background-size: cover;
+     background-attachment: fixed;
+     color: var(--ko-white);
+     font-family: var(--font-sans);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 8rem 2rem;
+     overflow: hidden;
+ }
+
+ /* RETÍCULA DE DISEÑADOR DE FONDO */
+ .ko-grid-overlay {
+     position: absolute;
+     inset: 0;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     pointer-events: none;
+     z-index: 1;
+     padding: 0 4rem;
+ }
+
+ .ko-grid-line {
+     border-left: 1px dashed rgba(255, 255, 255, 0.03);
+     height: 100%;
+ }
+
+ .ko-grid-line:last-child {
+     border-right: 1px dashed rgba(255, 255, 255, 0.03);
+ }
+
+ /* Contenedor Maestro */
+ .ko-brutal-container {
+     position: relative;
+     width: 100%;
+     max-width: 1350px;
+     z-index: 2;
+     display: flex;
+     flex-direction: column;
+     gap: 5rem;
+ }
+
+ /* METADATOS EDITORIALES DE ESQUINA */
+ .ko-editorial-meta-left,
+ .ko-editorial-meta-right {
+     position: absolute;
+     top: -4rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.2rem;
+     font-size: 0.65rem;
+     font-weight: 700;
+     letter-spacing: 0.2em;
+     color: var(--ko-muted);
+ }
+
+ .ko-editorial-meta-left {
+     left: 0;
+ }
+
+ .ko-editorial-meta-right {
+     right: 0;
+     text-align: right;
+ }
+
+ .ko-meta-tag {
+     display: block;
+ }
+
+ /* TÍTULO GIGANTE ASIMÉTRICO (Detrás de los textos, delante del fondo) */
+ .ko-giant-background-title {
+     position: absolute;
+     top: 10%;
+     width: 100%;
+     pointer-events: none;
+     z-index: 1;
+     display: flex;
+     flex-direction: column;
+     line-height: 0.85;
+ }
+
+ .ko-word-1 {
+     font-size: clamp(4rem, 12vw, 11rem);
+     font-weight: 900;
+     letter-spacing: -0.05em;
+     color: rgba(255, 255, 255, 0.02);
+     text-align: left;
+ }
+
+ .ko-word-2 {
+     font-size: clamp(4rem, 12vw, 11rem);
+     font-weight: 900;
+     letter-spacing: -0.05em;
+     color: rgba(255, 255, 255, 0.02);
+     text-align: right;
+     font-family: var(--font-display);
+     font-style: italic;
+ }
+
+ /* LAYOUT PRINCIPAL (Asimétrico y cruzado) */
+ .ko-brutal-layout {
+     position: relative;
+     display: grid;
+     grid-template-columns: 32fr 36fr 32fr;
+     gap: 2.5rem;
+     align-items: flex-start;
+     z-index: 3;
+ }
+
+ /* COLUMNA 1: LOGO Y FRASE */
+ .ko-brand-block {
+     display: flex;
+     flex-direction: column;
+     gap: 4rem;
+     margin-top: 2rem;
+ }
+
+ /* Estilo del Logo */
+ .ko-main-logo {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+ }
+
+ .ko-logo-graphic {
+     position: relative;
+     width: 45px;
+     height: 45px;
+     background: rgba(255, 255, 255, 0.03);
+     border: 1px solid var(--ko-border);
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .ko-glyph {
+     font-size: 1.2rem;
+ }
+
+ .ko-brand-name {
+     display: block;
+     font-weight: 800;
+     font-size: 1.1rem;
+     letter-spacing: 0.05em;
+ }
+
+ .ko-brand-sub {
+     display: block;
+     font-size: 0.65rem;
+     font-weight: 600;
+     color: var(--ko-muted);
+     letter-spacing: 0.2em;
+ }
+
+ .ko-punchline-text {
+     font-size: clamp(1.1rem, 2vw, 1.4rem);
+     line-height: 1.5;
+     font-weight: 500;
+     color: var(--ko-white);
+     border-left: 2px solid var(--ko-white);
+     padding-left: 1.5rem;
+ }
+
+ /* COLUMNA 2: CANVAS DE IMAGEN CENTRAL */
+ .ko-image-canvas {
+     display: flex;
+     flex-direction: column;
+     background: rgba(255, 255, 255, 0.01);
+     border: 1px solid var(--ko-border);
+     border-radius: 16px;
+     padding: 1rem;
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+ }
+
+ .ko-frame-decor-top,
+ .ko-frame-decor-bottom {
+     display: flex;
+     justify-content: space-between;
+     font-size: 0.65rem;
+     color: var(--ko-muted);
+     font-family: monospace;
+     letter-spacing: 0.1em;
+ }
+
+ .ko-frame-decor-top {
+     margin-bottom: 1rem;
+ }
+
+ .ko-frame-decor-bottom {
+     margin-top: 1rem;
+ }
+
+ .ko-image-wrapper {
+     width: 100%;
+     aspect-ratio: 4 / 5;
+     overflow: hidden;
+     border-radius: 8px;
+     background: linear-gradient(to bottom, transparent, #090d14);
+ }
+
+ .ko-avatar-img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     filter: grayscale(20%) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+     transition: transform 0.4s var(--pro-ease);
+ }
+
+ .ko-image-canvas:hover .ko-avatar-img {
+     transform: scale(1.02) translateY(-4px);
+ }
+
+ /* COLUMNA 3: TEXTOS EDITORIALES BLANCOS */
+ .ko-editorial-text-side {
+     display: flex;
+     flex-direction: column;
+     gap: 3.5rem;
+ }
+
+ .ko-bio-block {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+ }
+
+ .ko-bio-title {
+     font-size: 1.1rem;
+     font-weight: 700;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
+     color: var(--ko-white);
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+ }
+
+ .ko-num {
+     font-family: var(--font-display);
+     font-style: italic;
+     color: var(--ko-muted);
+ }
+
+ .ko-bio-p {
+     font-size: 0.95rem;
+     line-height: 1.75;
+     color: rgba(255, 255, 255, 0.95);
+     /* Blanco puro texturizado */
+     text-align: left;
+ }
+
+ .ko-text-white {
+     color: var(--ko-white);
+     font-weight: 600;
+     background: rgba(255, 255, 255, 0.06);
+     padding: 0.1rem 0.4rem;
+     border-radius: 4px;
+ }
+
+ /* PIE DE PÁGINA / FICHA TÉCNICA */
+ .ko-brutal-footer {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 2rem;
+     width: 100%;
+     margin-top: 2rem;
+ }
+
+ .ko-ft-text {
+     font-size: 0.7rem;
+     font-weight: 600;
+     letter-spacing: 0.2em;
+     color: var(--ko-muted);
+ }
+
+ .ko-footer-line {
+     flex-grow: 1;
+     height: 1px;
+     background: var(--ko-border);
+ }
+
+ /* Contenedor Sección con Degradado Superior */
+ .ko-brutal-about {
+     position: relative;
+     width: 100%;
+     min-height: 110vh;
+
+     /* NUEVO: Triple degradado para integrar el fondo como un diseñador pro */
+     background:
+         linear-gradient(to bottom, #06080c 0%, transparent 15%),
+         /* ← EL DEGRADADO DE ARRIBA */
+         linear-gradient(to bottom, rgba(6, 8, 12, 0.3), rgba(6, 8, 12, 0.98) 90%),
+         /* Difuminado central */
+         url('/img/SobreKevin.png') no-repeat center center;
+
+     background-size: cover;
+     background-attachment: fixed;
+     color: var(--ko-white);
+     font-family: var(--font-sans);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 8rem 2rem;
+     overflow: hidden;
+ }
+
+ /* ============================================================
+   RESPONSIVE LAYOUT (ELIMINA CUALQUIER DESBORDE)
+   ============================================================ */
+
+ @media (max-width: 1100px) {
+     .ko-brutal-layout {
+         grid-template-columns: 1fr;
+         gap: 4rem;
+     }
+
+     .ko-brand-block {
+         align-items: center;
+         text-align: center;
+         gap: 2rem;
+     }
+
+     .ko-punchline-text {
+         border-left: none;
+         border-bottom: 2px solid var(--ko-white);
+         padding: 0 0 1rem 0;
+     }
+
+     .ko-image-canvas {
+         max-width: 450px;
+         margin: 0 auto;
+     }
+
+     .ko-editorial-meta-left,
+     .ko-editorial-meta-right {
+         display: none;
+         /* Se ocultan detalles densos en pantallas medianas */
+     }
+ }
+
+ @media (max-width: 580px) {
+     .ko-brutal-about {
+         padding: 5rem 1.25rem;
+     }
+
+     .ko-hide-mob {
+         display: none;
+     }
+
+     .ko-word-1,
+     .ko-word-2 {
+         font-size: 4.5rem;
+     }
+
+     .ko-brutal-footer {
+         flex-direction: column;
+         gap: 1rem;
+         text-align: center;
+     }
+
+     .ko-footer-line {
+         display: none;
+     }
+ }
