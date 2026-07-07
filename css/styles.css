@@ -1,274 +1,621 @@
-/* VARIABLES Y RESET */
+/* ============================================================
+   IMPORTS
+============================================================ */
+
 @import url('../css/yo.css');
 @import url('../css/comic.css');
 @import url('../css/sobre.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('../css/logo.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap');
+
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
 :root {
-    --bg: #030416;
-    --accent: #00d4ff;
-    --accent-2: #6be6ff;
-    --muted: #bfcbdc;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --glass: rgba(255, 255, 255, 0.04);
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    --bg:#030416;
+    --accent:#00d4ff;
+    --accent-2:#6be6ff;
+    --muted:#bfcbdc;
 
-body {
-    background: var(--bg);
-    color: #e6eef7;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    --card-bg:rgba(255,255,255,.03);
+    --glass:rgba(255,255,255,.04);
+
 }
 
 
-/* CONTENEDOR GENERAL */
 
-.contenedor {
-    width: 100%;
-    margin: auto;
-    padding: 0;
+/* ============================================================
+   RESET GLOBAL
+============================================================ */
+
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
 }
 
 
-/* ==========================================================================
-   HERO SECTION (VIDEO BACKGROUND)
-   ========================================================================== */
 
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    background: #000;
-}
+html{
 
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    z-index: 1;
-}
+    scroll-behavior:smooth;
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(3, 4, 22, 0.9) 0%, rgba(3, 4, 22, 0.2) 100%);
-    z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    padding: 0 20px;
 }
 
 
-/* ==========================================================================
-   TIPOGRAFÍA HERO
-   ========================================================================== */
 
-.hero-title {
-    font-size: clamp(2.2rem, 8vw, 4.5rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
-    line-height: 1.1;
-}
+body{
 
-.hero-title strong {
-    color: var(--accent);
-    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-}
+    background:var(--bg);
+    color:#e6eef7;
+    font-family:'Inter',sans-serif;
 
-.tagline {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 400;
+    line-height:1.6;
+    font-size:16px;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
 }
 
 
-/* ==========================================================================
-   BOTONES Y ACCIONES
-   ========================================================================== */
 
-.hero-ctas {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-}
+img,
+video{
 
-.btn {
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
+    max-width:100%;
+    display:block;
 
-.btn-primary {
-    background: #fff;
-    color: #000;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-}
-
-.btn-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
 }
 
 
-/* SCROLL DOWN INDICATOR */
 
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    color: var(--muted);
-    font-size: 2rem;
-    text-decoration: none;
-    animation: float 2s ease-in-out infinite;
+/* ============================================================
+   CONTENEDOR GLOBAL
+============================================================ */
+
+
+.contenedor{
+
+    width:100%;
+    margin:auto;
+
 }
 
 
-/* ==========================================================================
-   ANIMACIONES
-   ========================================================================== */
 
-.reveal {
-    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes float {
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, 10px);
-    }
-}
+/* ============================================================
+   HERO
+============================================================ */
 
 
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
+.hero{
 
-@media (max-width: 768px) {
-    .hero-ctas {
-        flex-direction: column;
-        padding: 0 40px;
-    }
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-    .tagline {
-        letter-spacing: 2px;
-        font-size: 0.9rem;
-    }
-}
+    position:relative;
 
-.split {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    align-items: center;
+    width:100%;
+    height:100svh;
+
+    min-height:700px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:#000;
+
 }
 
 
-/*RESPONSIVE*/
 
-@media (max-width: 768px) {
-    .hero {
-        /* Mantenemos la altura completa para que se vea impactante */
-        height: 100vh;
-        padding: 0;
-        /* AQUÍ LA MAGIA: Ponemos la imagen de fondo solo para móvil */
-        background-image: url("../img/FONDO.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll;
-        /* Mejor rendimiento en móviles que 'fixed' */
-    }
-    /* Ocultamos el video pero MANTENEMOS el overlay */
-    .hero-video {
-        display: none !important;
-    }
-    /* No quites el overlay, cámbialo para que el texto resalte sobre la foto */
-    .hero-overlay {
-        display: block;
-        background: rgba(0, 0, 0, 0.5);
-        /* Oscurece un poco la imagen */
-    }
-    .hero-content {
-        padding: 0 20px;
-        width: 100%;
-    }
-    .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    .hero-ctas {
-        flex-direction: column;
-        gap: 15px;
-        /* Espacio entre botones */
-        width: 100%;
-        max-width: 300px;
-        /* Para que los botones no sean infinitos */
-        margin: 0 auto;
-    }
-    .btn {
-        width: 100%;
-        text-align: center;
-        display: block;
-    }
-    .tagline {
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
-    }
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:1;
+
+}
+
+
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        0deg,
+        rgba(3,4,22,.95),
+        rgba(3,4,22,.25)
+    );
+
+    z-index:2;
+
+}
+
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    width:100%;
+
+    max-width:1400px;
+
+    padding:0 40px;
+
+}
+
+
+
+/* ============================================================
+   TITULOS
+============================================================ */
+
+
+.hero-title{
+
+    font-size:clamp(2.2rem,6vw,5rem);
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:-2px;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.hero-title strong{
+
+    color:var(--accent);
+
+    text-shadow:
+    0 0 30px rgba(0,212,255,.4);
+
+}
+
+
+
+.tagline{
+
+    font-size:clamp(.9rem,2vw,1.3rem);
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    margin-bottom:2.5rem;
+
+}
+
+
+
+/* ============================================================
+   BOTONES
+============================================================ */
+
+
+.hero-ctas{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+}
+
+
+
+.btn{
+
+    padding:1rem 2.8rem;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+
+
+.btn-primary{
+
+    background:white;
+
+    color:black;
+
+}
+
+
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+.btn-glass{
+
+    background:rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+/* ============================================================
+   SCROLL
+============================================================ */
+
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:3;
+
+    font-size:2rem;
+
+    color:var(--muted);
+
+    animation:float 2s infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,10px);
+
+}
+
+}
+
+
+
+/* ============================================================
+   SPLIT
+============================================================ */
+
+
+.split{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+
+
+/* ============================================================
+   TABLETS
+============================================================ */
+
+
+@media(max-width:900px){
+
+
+.hero-content{
+
+padding:0 25px;
+
+}
+
+
+.hero-title{
+
+font-size:3rem;
+
+}
+
+
+.tagline{
+
+font-size:.9rem;
+
+letter-spacing:3px;
+
+}
+
+
+}
+
+
+
+
+/* ============================================================
+   MOVILES
+============================================================ */
+
+
+@media(max-width:768px){
+
+
+.hero{
+
+
+background-image:url("../img/FONDO.png");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:scroll;
+
+
+}
+
+
+
+.hero-video{
+
+display:none;
+
+}
+
+
+
+.hero-overlay{
+
+
+background:
+rgba(0,0,0,.55);
+
+
+}
+
+
+
+.hero-content{
+
+padding:0 20px;
+
+}
+
+
+
+.hero-title{
+
+font-size:2.3rem;
+
+letter-spacing:-1px;
+
+}
+
+
+
+.tagline{
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+line-height:1.8;
+
+}
+
+
+
+.hero-ctas{
+
+flex-direction:column;
+
+width:100%;
+
+max-width:320px;
+
+margin:auto;
+
+gap:15px;
+
+}
+
+
+
+.btn{
+
+width:100%;
+
+}
+
+
+
+.scroll-down{
+
+font-size:1.5rem;
+
+bottom:20px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* ============================================================
+   CELULARES PEQUEÑOS
+============================================================ */
+
+
+@media(max-width:400px){
+
+
+.hero-title{
+
+font-size:1.9rem;
+
+}
+
+
+.tagline{
+
+font-size:.7rem;
+
+}
+
+
+
+.btn{
+
+padding:.9rem 1rem;
+
+}
+
+
+}
+
+
+
+
+
+/* ============================================================
+   FULL HD / 2K
+============================================================ */
+
+
+@media(min-width:1920px){
+
+
+.hero-content{
+
+max-width:1600px;
+
+}
+
+
+.hero-title{
+
+font-size:7rem;
+
+}
+
+
+.tagline{
+
+font-size:1.7rem;
+
+}
+
+
+.btn{
+
+font-size:1.2rem;
+
+padding:1.4rem 4rem;
+
+}
+
+
+}
+
+
+
+/* ============================================================
+   4K
+============================================================ */
+
+
+@media(min-width:2560px){
+
+
+.hero-title{
+
+font-size:9rem;
+
+}
+
+
+.tagline{
+
+font-size:2rem;
+
+}
+
+
+.hero-content{
+
+max-width:2000px;
+
+}
+
+
+.btn{
+
+font-size:1.5rem;
+
+padding:1.8rem 5rem;
+
+}
+
+
 }

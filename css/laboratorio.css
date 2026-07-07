@@ -332,29 +332,239 @@
     text-overflow: ellipsis;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
+/* ============================================================
+   RESPONSIVE UNIVERSAL
+   Celulares • Tablets • Portátiles • PC • 2K • 4K
+============================================================ */
+
+/* ---------- Pantallas 4K ---------- */
+@media (min-width: 2560px) {
+
     .ap-db-wrapper-safe {
-        height: auto;
+        padding: 4rem;
     }
+
+    .ap-db-window {
+        max-width: 2400px;
+        margin: auto;
+    }
+
+    .ap-db-sidebar {
+        width: 320px;
+        min-width: 320px;
+    }
+
+    .ap-db-main {
+        padding: 3rem;
+    }
+
+    .ap-db-main-title {
+        font-size: 3rem;
+    }
+
+    .ap-db-description {
+        font-size: 1.1rem;
+    }
+
+    .ap-db-grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+}
+
+/* ---------- Pantallas grandes ---------- */
+@media (min-width:1920px) and (max-width:2559px) {
+
+    .ap-db-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+}
+
+/* ---------- Portátiles ---------- */
+@media (max-width:1440px) {
+
+    .ap-db-sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .ap-db-main {
+        padding: 1.7rem;
+    }
+
+    .ap-db-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+}
+
+/* ---------- Laptops pequeñas ---------- */
+@media (max-width:1200px) {
+
+    .ap-db-sidebar {
+        width: 200px;
+        min-width: 200px;
+        padding: 1rem;
+    }
+
+    .ap-db-main-title {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* ---------- Tablets horizontales ---------- */
+@media (max-width:992px) {
 
     .ap-db-layout {
         flex-direction: column;
-        height: auto;
-        overflow: visible;
     }
 
     .ap-db-sidebar {
         width: 100%;
-        height: auto;
+        min-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .sidebar-group {
+        flex: 1;
+        min-width: 180px;
     }
 
     .stats-group {
-        display: none;
+        width: 100%;
     }
 
     .ap-db-main {
         overflow: visible;
+    }
+
+}
+
+/* ---------- Tablets verticales ---------- */
+@media (max-width:768px) {
+
+    .ap-db-wrapper-safe {
+        padding: 1rem;
+        min-height: auto;
         height: auto;
     }
+
+    .ap-db-layout {
+        height: auto;
+    }
+
+    .ap-db-sidebar {
+        padding: 1rem;
+    }
+
+    .ap-db-main {
+        padding: 1.2rem;
+    }
+
+    .ap-db-main-title {
+        font-size: 1.4rem;
+    }
+
+    .ap-db-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+}
+
+/* ---------- Celulares grandes ---------- */
+@media (max-width:600px) {
+
+    .ap-db-topbar {
+        padding: 0 .8rem;
+    }
+
+    .ap-db-title-tab,
+    .ap-db-status {
+        display: none;
+    }
+
+    .ap-db-sidebar {
+        flex-direction: column;
+    }
+
+    .sidebar-group {
+        width: 100%;
+    }
+
+    .ap-db-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-title {
+        font-size: .9rem;
+    }
+
+    .card-meta {
+        font-size: .65rem;
+    }
+
+}
+
+/* ---------- Celulares pequeños ---------- */
+@media (max-width:480px) {
+
+    .ap-db-wrapper-safe {
+        padding: .6rem;
+    }
+
+    .ap-db-main {
+        padding: 1rem;
+    }
+
+    .ap-db-main-title {
+        font-size: 1.2rem;
+    }
+
+    .ap-db-description {
+        font-size: .75rem;
+    }
+
+    .sidebar-btn {
+        padding: .8rem;
+        font-size: .75rem;
+    }
+
+    .btn-upload-trigger {
+        padding: .8rem;
+        font-size: .8rem;
+    }
+
+    .card-info {
+        padding: .8rem;
+    }
+
+}
+
+/* ---------- Celulares muy pequeños ---------- */
+@media (max-width:360px) {
+
+    .ap-db-main-title {
+        font-size: 1rem;
+    }
+
+    .sidebar-btn {
+        font-size: .7rem;
+    }
+
+    .card-title {
+        font-size: .75rem;
+    }
+
 }

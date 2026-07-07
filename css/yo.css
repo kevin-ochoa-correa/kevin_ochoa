@@ -214,35 +214,399 @@
 }
 
 /* ============================================================
-   MEDIA QUERIES COMPACTOS
+   RESPONSIVE UNIVERSAL KDOC
+   CELULAR / TABLET / LAPTOP / PC / 4K
    ============================================================ */
-@media (max-width: 768px) {
-  .haven-nav {
-    top: 1rem;
-    width: 92%;
-  }
-  .nav-links { gap: 0.8rem; }
-  .nav-links a { font-size: 0.75rem; }
+
+
+/* ============================================================
+   PANTALLAS 4K Y MONITORES ULTRA GRANDES
+   2560px +
+   ============================================================ */
+
+@media (min-width: 2560px) {
+
+    .haven-hero,
+    .ap-portfolio,
+    .ko-brutal-about,
+    .ap-hd-portfolio,
+    .ap-vision {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+
+    .haven-hero-content {
+        max-width: 1200px;
+    }
+
+
+    .haven-main-title {
+        font-size: clamp(5rem, 5vw, 8rem);
+    }
+
+
+    .ap-container,
+    .ap-hd-container,
+    .ko-brutal-container {
+        max-width: 1800px;
+    }
+
+
+    .ap-bento-grid {
+        grid-auto-rows: 420px;
+        gap: 35px;
+    }
+
+
+    .vision-card {
+        padding: 4rem;
+    }
+
 }
 
-@media (max-width: 580px) {
-  .nav-links { display: none; }
-  .haven-nav { max-width: 320px; }
-  .desktop-br { display: none; }
-  .haven-cta-group {
-    flex-direction: column;
-    width: 100%;
-  }
-   .haven-hero {
-    /* Cambiamos a una imagen vertical optimizada para móviles */
-    background: 
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(15, 18, 25, 0.9)),
-      url('../img/KKevin.png') no-repeat center center;
-    background-size: cover;
-    
-    /* Nota: 'background-attachment: fixed' suele dar fallos o tirones en 
-       navegadores móviles (Safari/Chrome de celular), así que lo dejamos normal */
-    background-attachment: scroll; 
-  }
-  .btn-primary { width: 100%; justify-content: center; }
+
+
+/* ============================================================
+   PC GRANDE
+   1440px - 2559px
+   ============================================================ */
+
+@media (min-width:1440px) {
+
+
+    .haven-main-title {
+        font-size: clamp(4rem,5vw,6rem);
+    }
+
+
+    .ap-container {
+        max-width: none;
+        width: 100%;
+    }
+
+
+    .ap-hd-container,
+    .ko-brutal-container {
+        max-width: 1600px;
+    }
+
+
+    .ap-bento-grid {
+        grid-auto-rows: 350px;
+    }
+
+}
+
+
+
+/* ============================================================
+   LAPTOP
+   1025px - 1439px
+   ============================================================ */
+
+@media (max-width:1439px) {
+
+
+    .haven-hero {
+        padding: 0 3rem;
+    }
+
+
+    .haven-nav {
+        max-width: 850px;
+    }
+
+
+    .ap-hd-project-card {
+        gap: 3rem;
+    }
+
+
+    .ko-brutal-layout {
+        gap: 2rem;
+    }
+
+
+}
+
+
+
+/* ============================================================
+   TABLETS HORIZONTAL / VERTICAL
+   768px - 1024px
+   ============================================================ */
+
+@media (max-width:1024px) {
+
+
+    .haven-hero {
+        min-height: 100svh;
+    }
+
+
+    .haven-main-title {
+        font-size: clamp(2.8rem,7vw,4rem);
+    }
+
+
+    .ap-bento-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows:320px;
+    }
+
+
+
+    .vision-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+
+    .ap-hd-project-card,
+    .ap-hd-project-card.ap-hd-inverse {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .ko-brutal-layout {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .ko-brand-block {
+
+        align-items:center;
+        text-align:center;
+
+    }
+
+
+    .ko-image-canvas {
+
+        max-width:600px;
+        margin:auto;
+
+    }
+
+
+}
+
+
+
+
+/* ============================================================
+   CELULARES GRANDES
+   481px - 767px
+   ============================================================ */
+
+@media (max-width:767px){
+
+
+    body {
+        font-size:15px;
+    }
+
+
+    .haven-hero {
+
+        padding:0 1rem;
+        background-attachment:scroll;
+
+    }
+
+
+
+    .haven-main-title {
+
+        font-size:2.5rem;
+        line-height:1.15;
+
+    }
+
+
+
+    .haven-subtitle {
+
+        font-size:1rem;
+
+    }
+
+
+
+    .haven-nav {
+
+        width:95%;
+        top:1rem;
+
+    }
+
+
+
+    .nav-links {
+
+        display:none;
+
+    }
+
+
+
+    .haven-cta-group {
+
+        flex-direction:column;
+        width:100%;
+
+    }
+
+
+
+    .btn-primary {
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+
+
+    .ap-bento-grid {
+
+        grid-template-columns:1fr;
+        grid-auto-rows:350px;
+
+    }
+
+
+    .ap-item.big,
+    .ap-item.wide,
+    .ap-item.tall {
+
+        grid-column:span 1;
+        grid-row:span 1;
+
+    }
+
+
+
+    .vision-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .vision-card {
+
+        padding:2rem 1.5rem;
+
+    }
+
+
+
+    .ap-hd-portfolio {
+
+        padding:5rem 1rem;
+
+    }
+
+
+
+    .ap-hd-projects-list {
+
+        gap:5rem;
+
+    }
+
+
+
+    .ko-brutal-about {
+
+        padding:5rem 1rem;
+
+    }
+
+
+
+    .ko-word-1,
+    .ko-word-2 {
+
+        font-size:4rem;
+
+    }
+
+
+}
+
+
+
+
+/* ============================================================
+   CELULARES PEQUEÑOS
+   320px - 480px
+   ============================================================ */
+
+@media (max-width:480px){
+
+
+    .hero-title,
+    .haven-main-title {
+
+        font-size:2rem;
+
+    }
+
+
+    .tagline {
+
+        letter-spacing:1px;
+        font-size:.8rem;
+
+    }
+
+
+
+    .btn {
+
+        padding:.8rem 1.5rem;
+
+    }
+
+
+
+    .ap-item {
+
+        border-radius:20px;
+
+    }
+
+
+
+    .ko-image-wrapper {
+
+        aspect-ratio:3/4;
+
+    }
+
+
+
+    .ko-punchline-text {
+
+        font-size:1rem;
+
+    }
+
+
+
+    .scroll-btn {
+
+        font-size:.65rem;
+
+    }
+
+
 }

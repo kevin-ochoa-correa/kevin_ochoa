@@ -11,15 +11,15 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
-    overflow: hidden;
+    padding: 2rem 1rem 1rem 1rem; /* Margen móvil inicial */
+    overflow-x: hidden;
 
-    /* 🖥️ TU MAGNÍFICO FONDO FIJO SENIOR DE BASE */
+    /* 🖥️ FONDO FIJO SENIOR DE BASE */
     background:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(15, 18, 25, 0.75)),
         url('../img/sobre.png') no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Scroll en móvil para evitar tirones de rendimiento */
 }
 
 .astria-full-universe * {
@@ -28,13 +28,15 @@
     -webkit-font-smoothing: antialiased;
 }
 
-/* 1. HUD DE TEXTOS TÉCNICOS SUPERIORES */
+/* ============================================================
+   1. HUD DE TEXTOS TÉCNICOS SUPERIORES
+   ============================================================ */
 .astria-top-hud {
     width: 100%;
     max-width: 1400px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column; /* Columna por defecto en móvil */
+    gap: 1.5rem;
     z-index: 5;
 }
 
@@ -51,13 +53,8 @@
     color: #ffffff;
 }
 
-.hud-author-sub {
-    opacity: 0.8;
-}
-
-.hud-author-geo {
-    opacity: 0.6;
-}
+.hud-author-sub { opacity: 0.8; }
+.hud-author-geo { opacity: 0.6; }
 
 .hud-stars {
     color: #ffffff;
@@ -69,24 +66,26 @@
 .hud-top-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start; /* Alineado a la izquierda en móvil */
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.82rem;
     line-height: 1.4;
-    text-align: right;
+    text-align: left;
 }
 
-/* 2. AREA CENTRAL: FORMULARIO DE SUSCRIPCIÓN */
+/* ============================================================
+   2. AREA CENTRAL: FORMULARIO DE SUSCRIPCIÓN
+   ============================================================ */
 .astria-center-core {
     text-align: center;
     z-index: 5;
-    margin: 6rem 0;
+    margin: 4rem 0;
     width: 100%;
     max-width: 700px;
 }
 
 .astria-main-headline {
-    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+    font-size: clamp(2rem, 6vw, 4.2rem); /* Ajuste fluido responsive */
     font-weight: 500;
     color: #ffffff;
     letter-spacing: -0.02em;
@@ -95,14 +94,17 @@
 
 .astria-form-capsule {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Botón abajo en móviles pequeños */
+    gap: 0.5rem;
+    align-items: stretch;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 0.35rem;
-    border-radius: 100px;
+    padding: 0.5rem;
+    border-radius: 24px; /* Menos redondeado si se rompe en filas */
     max-width: 520px;
     margin: 0 auto;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .astria-input {
@@ -110,9 +112,10 @@
     background: transparent;
     border: none;
     outline: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 .astria-input::placeholder {
@@ -123,13 +126,14 @@
     background: rgba(30, 41, 59, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.85);
-    padding: 0.8rem 1.8rem;
-    border-radius: 100px;
-    font-size: 0.78rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
+    width: 100%;
 }
 
 .astria-btn-submit:hover {
@@ -137,11 +141,13 @@
     color: #0f1219;
 }
 
-/* 3. PARTE INFERIOR: FOOTER CRISTAL ESMERILADO PERFECTO */
+/* ============================================================
+   3. PARTE INFERIOR: FOOTER CRISTAL ESMERILADO PERFECTO
+   ============================================================ */
 .ap-footer-panel {
     width: 100%;
     max-width: 1400px;
-    padding: 3.5rem 3rem 2rem 3rem;
+    padding: 2rem 1.2rem;
     background: rgba(20, 26, 38, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
@@ -152,13 +158,13 @@
 
 .ap-footer-main {
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
-    gap: 3rem;
+    grid-template-columns: 1fr; /* Una columna base */
+    gap: 2.5rem;
     align-items: start;
 }
 
 .ap-footer-brand {
-    max-width: 320px;
+    max-width: 100%;
 }
 
 .ap-footer-logo {
@@ -190,8 +196,8 @@
 
 .ap-footer-links-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Una columna móvil */
+    gap: 2rem;
 }
 
 .ap-footer-col h4 {
@@ -199,7 +205,7 @@
     font-weight: 500;
     color: rgba(255, 255, 255, 0.6);
     margin-top: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .ap-footer-col ul {
@@ -218,21 +224,20 @@
     transition: color 0.15s ease;
 }
 
-.ap-footer-col ul a:hover {
-    color: #ffffff;
-}
+.ap-footer-col ul a:hover { color: #ffffff; }
 
 .ap-footer-divider {
     width: 100%;
     height: 1px;
     background: rgba(255, 255, 255, 0.06);
-    margin: 3rem 0 1.5rem 0;
+    margin: 2rem 0 1.5rem 0;
 }
 
 .ap-footer-bottom {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Apilado en móvil */
+    align-items: flex-start;
+    gap: 1.2rem;
 }
 
 .ap-footer-copyright {
@@ -269,50 +274,104 @@
     height: 15px;
 }
 
-.social-icons-group a:hover {
-    color: #ffffff;
+.social-icons-group a:hover { color: #ffffff; }
+
+
+/* ============================================================
+   MEDIA QUERIES (Evolución de Pantallas)
+   ============================================================ */
+
+/* 📱 MÓVILES MEDIANOS/GRANDES (e.g., de 480px en adelante) */
+@media (min-width: 480px) {
+    .astria-form-capsule {
+        flex-direction: row; /* El input y el botón se alinean inline */
+        border-radius: 100px;
+        padding: 0.35rem;
+    }
+    .astria-input {
+        text-align: left;
+    }
+    .astria-btn-submit {
+        width: auto;
+        border-radius: 100px;
+    }
+    .ap-footer-links-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en móvil grande */
+    }
 }
 
-/* OPTIMIZACIONES DE PANTALLA MÓVIL */
-@media (max-width: 968px) {
-    .ap-footer-main {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .ap-footer-links-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+/* 慶 TABLETS (Desde 768px) */
+@media (min-width: 768px) {
     .astria-full-universe {
-        background-attachment: scroll;
-        padding-top: 2rem;
-    }
-}
-
-@media (max-width: 680px) {
-    .ap-footer-links-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-    }
-
-    .ap-footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.2rem;
-    }
-
-    .ap-footer-panel {
-        padding: 2.5rem 1.8rem 1.8rem 1.8rem;
+        padding: 3rem 2rem 2rem 2rem;
+        background-attachment: fixed; /* Activamos el fondo fijo premium */
     }
 
     .astria-top-hud {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .hud-top-right {
-        align-items: flex-start;
-        text-align: left;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .astria-center-core {
+        margin: 6rem 0;
+    }
+
+    .ap-footer-panel {
+        padding: 3.5rem 3rem 2rem 3rem;
+    }
+
+    .ap-footer-main {
+        grid-template-columns: 1fr 1.8fr;
+        gap: 3rem;
+    }
+
+    .ap-footer-links-grid {
+        grid-template-columns: repeat(3, 1fr); /* Estructura original de 3 columnas */
+    }
+
+    .ap-footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* 🖥️ PC ESCRITORIO ESTÁNDAR (Desde 1024px en adelante) */
+@media (min-width: 1024px) {
+    .ap-footer-brand {
+        max-width: 320px;
+    }
+}
+
+/* 📺 PANTALLAS ULTRA HD / 4K (Desde 2500px en adelante) */
+@media (min-width: 2500px) {
+    /* Escalado proporcional para que todo no se vea minúsculo en 4K */
+    html {
+        font-size: 22px; /* Incrementa la unidad rem base global */
+    }
+
+    .astria-top-hud, 
+    .ap-footer-panel {
+        max-width: 2200px; /* Expandimos los contenedores máximos */
+    }
+
+    .astria-center-core {
+        max-width: 1200px;
+        margin: 12rem 0; /* Mayor espacio vertical en pantallas gigantes */
+    }
+
+    .astria-form-capsule {
+        max-width: 800px;
+        padding: 0.6rem;
+    }
+
+    .ap-footer-panel {
+        padding: 5rem 4rem 3rem 4rem;
+        border-radius: 40px; /* Bordes más imponentes en 4k */
     }
 }

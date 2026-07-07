@@ -52,13 +52,13 @@
 
 .ap-hd-container {
   position: relative;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 8rem; /* Gran separación para dejar respirar cada proyecto */
+  width:100%;
+  margin:0 auto;
+  padding-inline:clamp(1rem,5vw,10rem);
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(5rem,8vw,10rem);
 }
 
 /* --- CABECERA EDITORIAL --- */
@@ -249,48 +249,404 @@
 }
 
 /* ============================================================
-   RESPONSIVE LAYOUT (DE GALERÍA PC A COMPACTO MÓVIL)
-   ============================================================ */
+   RESPONSIVE UNIVERSAL - EDITORIAL PREMIUM KDOC
+   Mobile • Tablet • Laptop • Desktop • 2K • 4K
+============================================================ */
 
-@media (max-width: 1200px) {
-  .ap-hd-portfolio { padding: 8rem 2rem; }
-  .ap-hd-project-card, .ap-hd-project-card.ap-hd-inverse {
-    gap: 3rem;
-  }
+
+/* =========================
+   DESKTOP GRANDE
+========================= */
+@media (min-width:1440px){
+
+    .ap-hd-portfolio{
+        padding:12rem 0;
+    }
+
+
+    .ap-hd-project-card{
+        gap:6rem;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:14rem;
+    }
+
+
 }
 
-@media (max-width: 960px) {
-  /* En tablets colapsa a flujo vertical natural */
-  .ap-hd-project-card, .ap-hd-project-card.ap-hd-inverse {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .ap-hd-project-card.ap-hd-inverse .ap-hd-col-info {
-    grid-column: 1;
-  }
-  .ap-hd-project-card.ap-hd-inverse .ap-hd-col-visual {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  .ap-hd-projects-list {
-    gap: 7rem;
-  }
+
+
+/* =========================
+   LAPTOPS
+========================= */
+@media (max-width:1440px){
+
+    .ap-hd-portfolio{
+        padding:9rem 0;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:4rem;
+    }
+
+
+    .ap-hd-project-card{
+        gap:4rem;
+    }
+
+
 }
 
-@media (max-width: 600px) {
-  .ap-hd-portfolio { padding: 6rem 1.25rem; }
-  .ap-hd-grid-overlay { display: none; } /* Oculta líneas guía */
-  
-  .ap-hd-header {
-    padding-left: 1rem;
-  }
-  
-  .ap-hd-image-frame {
-    aspect-ratio: 4 / 3; /* Más cuadrado en celulares para mejor visibilidad */
-  }
 
-  .ap-hd-spec-item {
-    grid-template-columns: 1fr; /* Apila etiquetas técnicas en móvil */
-    gap: 0.25rem;
-  }
+
+/* =========================
+   PORTÁTILES PEQUEÑOS
+========================= */
+@media (max-width:1200px){
+
+    .ap-hd-container{
+        padding-inline:3rem;
+    }
+
+
+    .ap-hd-project-card{
+        grid-template-columns:1fr 1fr;
+        gap:3rem;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:10rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   TABLETS HORIZONTALES
+========================= */
+@media (max-width:960px){
+
+    .ap-hd-portfolio{
+        padding:7rem 0;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:2rem;
+    }
+
+
+    .ap-hd-project-card,
+    .ap-hd-project-card.ap-hd-inverse{
+
+        grid-template-columns:1fr;
+        gap:2.5rem;
+
+    }
+
+
+    .ap-hd-project-card.ap-hd-inverse .ap-hd-col-info{
+        grid-column:1;
+    }
+
+
+    .ap-hd-project-card.ap-hd-inverse .ap-hd-col-visual{
+        grid-column:1;
+        grid-row:auto;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:7rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:2.5rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   TABLETS VERTICALES
+========================= */
+@media (max-width:768px){
+
+    .ap-hd-portfolio{
+        padding:5rem 0;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:1.5rem;
+        gap:5rem;
+    }
+
+
+    .ap-hd-header{
+        padding-left:1rem;
+    }
+
+
+    .ap-hd-main-title{
+        font-size:2.8rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:2.2rem;
+    }
+
+
+    .ap-hd-concept{
+        font-size:.95rem;
+        line-height:1.7;
+        text-align:left;
+    }
+
+
+    .ap-hd-image-frame{
+        aspect-ratio:4/3;
+        border-radius:14px;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES GRANDES
+========================= */
+@media (max-width:600px){
+
+    .ap-hd-portfolio{
+        padding:4rem 0;
+        background-attachment:scroll;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:1rem;
+    }
+
+
+    .ap-hd-grid-overlay{
+        display:none;
+    }
+
+
+    .ap-hd-header{
+        border-left-width:2px;
+    }
+
+
+    .ap-hd-eyebrow{
+        font-size:.65rem;
+    }
+
+
+    .ap-hd-main-title{
+        font-size:2.2rem;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:5rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:1.8rem;
+    }
+
+
+    .ap-hd-meta-row{
+        gap:1rem;
+    }
+
+
+    .ap-hd-number{
+        font-size:1.2rem;
+    }
+
+
+    .ap-hd-tag{
+        font-size:.55rem;
+    }
+
+
+    .ap-hd-spec-item{
+        grid-template-columns:1fr;
+        gap:.3rem;
+    }
+
+
+    .ap-hd-image-frame{
+        aspect-ratio:1/1;
+        border-radius:12px;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+@media (max-width:480px){
+
+    .ap-hd-container{
+        padding-inline:.8rem;
+    }
+
+
+    .ap-hd-main-title{
+        font-size:1.8rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:1.55rem;
+    }
+
+
+    .ap-hd-concept{
+        font-size:.85rem;
+    }
+
+
+    .ap-hd-btn-action{
+        font-size:.8rem;
+    }
+
+
+    .ap-hd-specs-table{
+        padding:1rem 0;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
+@media (max-width:360px){
+
+    .ap-hd-main-title{
+        font-size:1.5rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:1.35rem;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:.6rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   FULL HD / 2K
+========================= */
+@media (min-width:1920px){
+
+    .ap-hd-portfolio{
+        padding:14rem 0;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:12rem;
+    }
+
+
+    .ap-hd-project-card{
+        gap:8rem;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:16rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:4rem;
+    }
+
+
+    .ap-hd-concept{
+        font-size:1.25rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   4K / ULTRAWIDE
+========================= */
+@media (min-width:2560px){
+
+    .ap-hd-portfolio{
+        padding:18rem 0;
+    }
+
+
+    .ap-hd-container{
+        padding-inline:16rem;
+    }
+
+
+    .ap-hd-project-card{
+        gap:10rem;
+    }
+
+
+    .ap-hd-projects-list{
+        gap:20rem;
+    }
+
+
+    .ap-hd-main-title{
+        font-size:6rem;
+    }
+
+
+    .ap-hd-project-name{
+        font-size:5rem;
+    }
+
+
+    .ap-hd-concept{
+        font-size:1.5rem;
+        line-height:1.9;
+    }
+
+
+    .ap-hd-image-frame{
+        border-radius:30px;
+    }
+
+
 }

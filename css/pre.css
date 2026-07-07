@@ -26,8 +26,8 @@
 .ap-vision .ap-container {
     position: relative;
     width: 100%;
-    max-width: 1250px;
     margin: 0 auto;
+    padding-inline: clamp(1rem, 4vw, 6rem);
     z-index: 2;
 }
 
@@ -184,18 +184,373 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* ============================================================
+   RESPONSIVE UNIVERSAL - VISIÓN HUD KDOC
+   Mobile • Tablet • Laptop • Desktop • 2K • 4K
+============================================================ */
 
 
-/* Responsivo para Tablets y Celulares */
-@media (max-width: 968px) {
-    .vision-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+/* =========================
+   DESKTOP GRANDE
+========================= */
+@media (min-width:1440px){
+
+    .ap-vision{
+        padding:9rem 0;
     }
-    .ap-vision {
-        padding: 5rem 1.5rem;
+
+
+    .vision-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:2.5rem;
     }
-    .hud-section-header {
-        margin-bottom: 2.5rem;
+
+
+    .vision-card{
+        padding:3.5rem 2.8rem;
     }
+
+
 }
+
+
+/* =========================
+   LAPTOPS
+========================= */
+@media (max-width:1440px){
+
+    .ap-vision{
+        padding:7rem 0;
+    }
+
+
+    .vision-grid{
+        gap:1.8rem;
+    }
+
+
+    .vision-card{
+        padding:2.5rem 2rem;
+    }
+
+
+}
+
+
+/* =========================
+   PORTÁTILES PEQUEÑOS
+========================= */
+@media (max-width:1200px){
+
+    .vision-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    .hud-section-title{
+        font-size:2.2rem;
+    }
+
+
+}
+
+
+/* =========================
+   TABLETS HORIZONTALES
+========================= */
+@media (max-width:992px){
+
+    .ap-vision{
+        padding:5rem 0;
+    }
+
+
+    .ap-vision .ap-container{
+        padding-inline:2rem;
+    }
+
+
+    .vision-grid{
+        grid-template-columns:1fr;
+        gap:1.5rem;
+    }
+
+
+    .vision-card{
+        padding:2.5rem;
+    }
+
+
+}
+
+
+/* =========================
+   TABLETS VERTICALES
+========================= */
+@media (max-width:768px){
+
+    .ap-vision{
+        padding:4rem 0;
+    }
+
+
+    .ap-vision .ap-container{
+        padding-inline:1.5rem;
+    }
+
+
+    .hud-section-header{
+        margin-bottom:2rem;
+    }
+
+
+    .hud-section-title{
+        font-size:2rem;
+    }
+
+
+    .vision-card{
+        padding:2rem;
+    }
+
+
+    .vision-card h3{
+        font-size:1.15rem;
+    }
+
+
+    .vision-card p{
+        font-size:.9rem;
+    }
+
+
+}
+
+
+/* =========================
+   CELULARES GRANDES
+========================= */
+@media (max-width:600px){
+
+    .ap-vision{
+        padding:3rem 0;
+    }
+
+
+    .ap-vision .ap-container{
+        padding-inline:1rem;
+    }
+
+
+    .hud-grid-overlay{
+        background-size:35px 35px;
+    }
+
+
+    .hud-section-title{
+        font-size:1.7rem;
+    }
+
+
+    .hud-serial{
+        font-size:.65rem;
+    }
+
+
+    .vision-card{
+        padding:1.5rem;
+        border-radius:10px;
+    }
+
+
+    .vision-meta-top{
+        margin-bottom:1.5rem;
+    }
+
+
+    .vision-icon-wrapper{
+        width:42px;
+        height:42px;
+        margin-bottom:1.3rem;
+    }
+
+
+    .hud-svg-icon{
+        width:20px;
+        height:20px;
+    }
+
+
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+@media (max-width:480px){
+
+    .hud-section-title{
+        font-size:1.5rem;
+    }
+
+
+    .vision-card{
+        padding:1.3rem;
+    }
+
+
+    .vision-card h3{
+        font-size:1rem;
+    }
+
+
+    .vision-card p{
+        font-size:.85rem;
+        line-height:1.5;
+    }
+
+
+    .vision-tag{
+        font-size:.55rem;
+    }
+
+
+    .vision-number{
+        font-size:.7rem;
+    }
+
+
+}
+
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
+@media (max-width:360px){
+
+    .ap-vision .ap-container{
+        padding-inline:.8rem;
+    }
+
+
+    .hud-section-title{
+        font-size:1.35rem;
+    }
+
+
+    .vision-card{
+        padding:1rem;
+    }
+
+
+    .vision-card p{
+        font-size:.8rem;
+    }
+
+
+}
+
+
+/* =========================
+   FULL HD / 2K
+========================= */
+@media (min-width:1920px){
+
+    .ap-vision{
+        padding:10rem 0;
+    }
+
+
+    .ap-vision .ap-container{
+        padding-inline:8rem;
+    }
+
+
+    .vision-grid{
+        gap:3rem;
+    }
+
+
+    .vision-card{
+        padding:4rem 3rem;
+    }
+
+
+    .hud-section-title{
+        font-size:3rem;
+    }
+
+
+    .vision-card h3{
+        font-size:1.5rem;
+    }
+
+
+    .vision-card p{
+        font-size:1.05rem;
+    }
+
+
+}
+
+
+/* =========================
+   4K / ULTRAWIDE
+========================= */
+@media (min-width:2560px){
+
+    .ap-vision{
+        padding:12rem 0;
+    }
+
+
+    .ap-vision .ap-container{
+        padding-inline:12rem;
+    }
+
+
+    .vision-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:4rem;
+    }
+
+
+    .vision-card{
+        padding:5rem 4rem;
+    }
+
+
+    .hud-section-title{
+        font-size:4rem;
+    }
+
+
+    .hud-serial{
+        font-size:1rem;
+    }
+
+
+    .vision-icon-wrapper{
+        width:65px;
+        height:65px;
+    }
+
+
+    .hud-svg-icon{
+        width:30px;
+        height:30px;
+    }
+
+
+    .vision-card h3{
+        font-size:1.8rem;
+    }
+
+
+    .vision-card p{
+        font-size:1.25rem;
+        line-height:1.8;
+    }
+
+}
+

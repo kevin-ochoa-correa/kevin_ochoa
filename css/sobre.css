@@ -60,16 +60,15 @@
      border-right: 1px dashed rgba(255, 255, 255, 0.03);
  }
 
- /* Contenedor Maestro */
- .ko-brutal-container {
-     position: relative;
-     width: 100%;
-     max-width: 1350px;
-     z-index: 2;
-     display: flex;
-     flex-direction: column;
-     gap: 5rem;
- }
+.ko-brutal-container {
+    position: relative;
+    width:100%;
+    padding-inline:clamp(1rem,5vw,10rem);
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(4rem,6vw,8rem);
+}
 
  /* METADATOS EDITORIALES DE ESQUINA */
  .ko-editorial-meta-left,
@@ -339,60 +338,407 @@
  }
 
  /* ============================================================
-   RESPONSIVE LAYOUT (ELIMINA CUALQUIER DESBORDE)
-   ============================================================ */
+   RESPONSIVE UNIVERSAL - BRUTAL ABOUT KDOC
+   Mobile • Tablet • Laptop • Desktop • 2K • 4K
+============================================================ */
 
- @media (max-width: 1100px) {
-     .ko-brutal-layout {
-         grid-template-columns: 1fr;
-         gap: 4rem;
-     }
 
-     .ko-brand-block {
-         align-items: center;
-         text-align: center;
-         gap: 2rem;
-     }
+/* =========================
+   DESKTOP GRANDE
+========================= */
+@media (min-width:1600px){
 
-     .ko-punchline-text {
-         border-left: none;
-         border-bottom: 2px solid var(--ko-white);
-         padding: 0 0 1rem 0;
-     }
+    .ko-brutal-about{
+        padding:12rem 0;
+    }
 
-     .ko-image-canvas {
-         max-width: 450px;
-         margin: 0 auto;
-     }
 
-     .ko-editorial-meta-left,
-     .ko-editorial-meta-right {
-         display: none;
-         /* Se ocultan detalles densos en pantallas medianas */
-     }
- }
+    .ko-brutal-container{
+        padding-inline:8rem;
+    }
 
- @media (max-width: 580px) {
-     .ko-brutal-about {
-         padding: 5rem 1.25rem;
-     }
 
-     .ko-hide-mob {
-         display: none;
-     }
+    .ko-brutal-layout{
+        grid-template-columns:30fr 40fr 30fr;
+        gap:5rem;
+    }
 
-     .ko-word-1,
-     .ko-word-2 {
-         font-size: 4.5rem;
-     }
 
-     .ko-brutal-footer {
-         flex-direction: column;
-         gap: 1rem;
-         text-align: center;
-     }
+    .ko-image-wrapper{
+        aspect-ratio:4 / 5;
+    }
 
-     .ko-footer-line {
-         display: none;
-     }
- }
+
+}
+
+
+
+/* =========================
+   LAPTOPS
+========================= */
+@media (max-width:1400px){
+
+    .ko-brutal-container{
+        padding-inline:4rem;
+    }
+
+
+    .ko-brutal-layout{
+        gap:3rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   PORTÁTILES PEQUEÑOS
+========================= */
+@media (max-width:1200px){
+
+    .ko-brutal-about{
+        min-height:auto;
+        padding:8rem 0;
+    }
+
+
+    .ko-brutal-layout{
+        grid-template-columns:1fr 1fr;
+        gap:3rem;
+    }
+
+
+    .ko-editorial-text-side{
+        grid-column:span 2;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+}
+
+
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width:992px){
+
+    .ko-brutal-container{
+        padding-inline:2rem;
+    }
+
+
+    .ko-brutal-layout{
+        grid-template-columns:1fr;
+        gap:4rem;
+    }
+
+
+    .ko-editorial-text-side{
+        grid-column:auto;
+        display:flex;
+    }
+
+
+    .ko-brand-block{
+        align-items:center;
+        text-align:center;
+    }
+
+
+    .ko-punchline-text{
+        border-left:none;
+        border-bottom:2px solid var(--ko-white);
+        padding:0 0 1rem;
+        text-align:center;
+    }
+
+
+    .ko-image-canvas{
+        max-width:500px;
+        margin:auto;
+    }
+
+
+    .ko-editorial-meta-left,
+    .ko-editorial-meta-right{
+        display:none;
+    }
+
+
+}
+
+
+
+/* =========================
+   TABLETS PEQUEÑAS
+========================= */
+@media (max-width:768px){
+
+    .ko-brutal-about{
+        padding:6rem 0;
+    }
+
+
+    .ko-brutal-container{
+        padding-inline:1.5rem;
+    }
+
+
+    .ko-giant-background-title{
+        top:5%;
+    }
+
+
+    .ko-word-1,
+    .ko-word-2{
+        font-size:clamp(3rem,15vw,6rem);
+    }
+
+
+    .ko-brand-block{
+        gap:2rem;
+    }
+
+
+    .ko-image-canvas{
+        padding:.8rem;
+        border-radius:12px;
+    }
+
+
+    .ko-bio-p{
+        font-size:.9rem;
+        line-height:1.7;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES GRANDES
+========================= */
+@media (max-width:600px){
+
+    .ko-brutal-about{
+        padding:5rem 0;
+        background-attachment:scroll;
+    }
+
+
+    .ko-brutal-container{
+        padding-inline:1rem;
+    }
+
+
+    .ko-grid-overlay{
+        display:none;
+    }
+
+
+    .ko-main-logo{
+        flex-direction:column;
+    }
+
+
+    .ko-brand-name{
+        font-size:1rem;
+    }
+
+
+    .ko-punchline-text{
+        font-size:1rem;
+    }
+
+
+    .ko-image-wrapper{
+        aspect-ratio:1 / 1.2;
+    }
+
+
+    .ko-bio-title{
+        font-size:1rem;
+    }
+
+
+    .ko-bio-p{
+        font-size:.85rem;
+    }
+
+
+    .ko-brutal-footer{
+        flex-direction:column;
+        text-align:center;
+        gap:1rem;
+    }
+
+
+    .ko-footer-line{
+        display:none;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+@media (max-width:480px){
+
+    .ko-brutal-container{
+        padding-inline:.8rem;
+    }
+
+
+    .ko-logo-graphic{
+        width:38px;
+        height:38px;
+    }
+
+
+    .ko-glyph{
+        font-size:1rem;
+    }
+
+
+    .ko-word-1,
+    .ko-word-2{
+        font-size:3.5rem;
+    }
+
+
+    .ko-bio-p{
+        font-size:.8rem;
+    }
+
+
+    .ko-ft-text{
+        font-size:.6rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
+@media (max-width:360px){
+
+    .ko-brutal-container{
+        padding-inline:.6rem;
+    }
+
+
+    .ko-word-1,
+    .ko-word-2{
+        font-size:3rem;
+    }
+
+
+    .ko-brand-name{
+        font-size:.9rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   FULL HD / 2K
+========================= */
+@media (min-width:1920px){
+
+    .ko-brutal-about{
+        padding:15rem 0;
+    }
+
+
+    .ko-brutal-container{
+        padding-inline:12rem;
+    }
+
+
+    .ko-brutal-layout{
+        grid-template-columns:28fr 44fr 28fr;
+        gap:8rem;
+    }
+
+
+    .ko-brand-name{
+        font-size:1.5rem;
+    }
+
+
+    .ko-punchline-text{
+        font-size:1.6rem;
+    }
+
+
+    .ko-bio-p{
+        font-size:1.2rem;
+    }
+
+
+}
+
+
+
+/* =========================
+   4K / ULTRAWIDE
+========================= */
+@media (min-width:2560px){
+
+    .ko-brutal-about{
+        padding:20rem 0;
+    }
+
+
+    .ko-brutal-container{
+        padding-inline:18rem;
+    }
+
+
+    .ko-brutal-layout{
+        grid-template-columns:25fr 50fr 25fr;
+        gap:10rem;
+    }
+
+
+    .ko-word-1,
+    .ko-word-2{
+        font-size:14rem;
+    }
+
+
+    .ko-punchline-text{
+        font-size:2rem;
+    }
+
+
+    .ko-bio-title{
+        font-size:1.5rem;
+    }
+
+
+    .ko-bio-p{
+        font-size:1.4rem;
+        line-height:1.9;
+    }
+
+
+    .ko-image-canvas{
+        border-radius:30px;
+        padding:2rem;
+    }
+
+
+}
